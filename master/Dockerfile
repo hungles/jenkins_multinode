@@ -1,9 +1,6 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:latest
 
 USER root
-
-RUN mkdir -p /home/jenkins/.ssh && \
-    chown -R jenkins:jenkins /home/jenkins/.ssh
     
 RUN apt-get update && apt-get install -y curl
 
