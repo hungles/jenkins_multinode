@@ -1,0 +1,55 @@
+jenkins:
+  systemMessage: "Jenkins con nodos autoconfigurados por JCasC"
+  numExecutors: 2
+
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+
+  nodes:
+    - permanent:
+        name: "agent1"
+        remoteFS: "/home/jenkins/agent"
+        labelString: "worker"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: false
+              workDirPath: "/home/jenkins/agent"
+              internalDir: "remoting"
+              failIfWorkDirIsMissing: false
+        retentionStrategy: "always"
+
+    - permanent:
+        name: "agent2"
+        remoteFS: "/home/jenkins/agent"
+        labelString: "worker"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: false
+              workDirPath: "/home/jenkins/agent"
+              internalDir: "remoting"
+              failIfWorkDirIsMissing: false
+        retentionStrategy: "always"
+
+    - permanent:
+        name: "agent3"
+        remoteFS: "/home/jenkins/agent"
+        labelString: "worker"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: false
+              workDirPath: "/home/jenkins/agent"
+              internalDir: "remoting"
+              failIfWorkDirIsMissing: false
+        retentionStrategy: "always"
+  
+  
