@@ -1,5 +1,5 @@
 jenkins:
-  systemMessage: "Jenkins con nodos autoconfigurados por JCasC"
+  systemMessage: "Jenkins configured with 3 agents"
   numExecutors: 2
 
   securityRealm:
